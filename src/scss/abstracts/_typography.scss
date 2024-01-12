@@ -1,0 +1,36 @@
+@use "sizes" as *;
+
+// Contextual font properties
+$-ff-overpass: #{"system-ui, \"Overpass\", sans-serif"};
+
+// Default font weights
+$font-weight-thin: 100;
+$font-weight-extra-light: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-heavy: 900;
+
+// Font map for generating font utility classes
+$utility-font: (
+    "family": (
+        "overpass": $-ff-overpass,
+    ),
+);
+
+// Font map for generating custom font properties
+$contextual-font: (
+    "family": (
+        "body": $-ff-overpass,
+    ),
+    "size": (
+        "body": 1rem,
+    ),
+    "weight": (
+        "body": $font-weight-normal,
+    ),
+);
+

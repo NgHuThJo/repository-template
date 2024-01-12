@@ -1,0 +1,36 @@
+// Primary colors
+// Naming convention based on position in color wheel
+// 30 - 210: warm - mid - cool
+// 210 - 30: cool - mid - warm
+
+// Neutral colors
+
+// Gradients
+
+// Color map for generating color utility classes
+$utility-color: (
+);
+
+// Color map for generating custom color properties
+$contextual-color: (
+  "color": (
+  ),
+  "background-color": ( 
+  ),
+);
+
+// Theme map for generating theme classes
+$theme-color: (
+  "dark": (
+    "color": (
+    ),
+    "background-color": (
+    ),
+  ),
+  "light": (
+    "color": (
+    ),
+    "background-color": (
+    ),
+  ),
+);
