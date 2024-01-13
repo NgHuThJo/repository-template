@@ -1,5 +1,7 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
   entry: {
@@ -8,8 +10,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        test: /\.s[ac]ss$/i,
+        use: [
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -18,7 +25,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: "[name][contenthash].bundle.js",
+    filename: devMode ? "[name].bundle.js" : "[name].[contenthash].bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
     assetModuleFilename: "[name][ext]",
@@ -28,6 +35,10 @@ module.exports = {
       filename: "index.html",
       inject: "head",
       scriptLoading: "defer",
+    }),
+    new MiniCssExtractPlugin({
+      filename: devMode ? "[name].css" : "[name].[contenthash].css",
+      chunkFilename: devMode ? "[id].css" : "[id].[contenthash].css",
     }),
   ],
 };
