@@ -1,9 +1,7 @@
 module.exports = {
   plugins: [
-    require("@fullhuman/postcss-purgecss")({
-      content: ["./src/**/*.html"],
-      css: ["./src/css/style.css"],
-    }),
+    require("@fullhuman/postcss-purgecss")({}),
+    require("autoprefixer"),
     require("cssnano"),
     require("postcss-import"),
     require("postcss-preset-env"),
