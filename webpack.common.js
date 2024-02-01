@@ -8,12 +8,20 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/i,
+        use: ["html-loader"],
+      },
+      {
         test: /\.(avif|gif|jpe?g|png|svg|webp)$/i,
         type: "asset/resource",
       },
       {
         test: /\.(eot|[ot]tf|woff2?)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /\.svg$/i,
+        type: "asset/inline",
       },
     ],
   },
