@@ -26,34 +26,9 @@ module.exports = merge(common, {
         minimizer: {
           implementation: ImageMinimizerPlugin.sharpMinify,
           options: {
-            encodeOptions: {
-              jpeg: {
-                quality: 100,
-              },
-              webp: {
-                lossless: true,
-              },
-              avif: {
-                lossless: true,
-              },
-              png: {},
-              gif: {},
-            },
+            encodeOptions: {},
           },
         },
-        generator: [
-          {
-            preset: "avif",
-            implementation: ImageMinimizerPlugin.sharpGenerate,
-            options: {
-              encodeOptions: {
-                avif: {
-                  cqLevel: 33,
-                },
-              },
-            },
-          },
-        ],
       }),
     ],
   },
