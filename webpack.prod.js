@@ -33,12 +33,12 @@ module.exports = merge(common, {
     ],
   },
   output: {
-    filename: "[name].[contenthash].bundle.js",
+    filename: "js/[name].[contenthash].bundle.js",
     assetModuleFilename: "assets/[hash][ext][query]",
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      filename: "css/[name].[contenthash].css",
     }),
   ],
 });

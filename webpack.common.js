@@ -9,7 +9,7 @@ module.exports = {
     rules: [
       {
         test: /\.html$/i,
-        use: ["html-loader"],
+        use: ["html-loader-srcset"],
       },
       {
         test: /\.(avif|gif|jpe?g|png|svg|webp)$/i,
